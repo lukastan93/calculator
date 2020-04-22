@@ -31,13 +31,29 @@ flex-direction:column;
     height: 9rem;
     width: 27.6rem;
     background-color: rgb(214, 215, 219);
-    margin:1rem 1rem 0 1.2rem;
+    margin:1rem 1.2rem 0 1.2rem;
     font-family: 'Lato';
     font-size: 5rem;
     line-height: 0;
 }
 .display-container p{
     margin-right:1rem;
+}
+.clear-button{
+    display:flex;
+    width:2rem;
+    height:2rem;
+    border-radius: 50%;
+    justify-content: center;
+    align-items:center;
+    font-size: 1.3rem;
+    position: absolute;
+    justify-self: flex-end;
+    align-self: flex-start;
+    background-color: rgb(236, 236, 237);
+}
+.clear-button:hover{
+    cursor: pointer;
 }
 .button-container {
     width: 28rem;
@@ -60,6 +76,7 @@ flex-direction:column;
 }
 .button-container .zero:hover, .one:hover, .two:hover, .three:hover, .four:hover, .five:hover, .six:hover, .seven:hover, .eight:hover, .nine:hover{
     background-color: rgb(214, 215, 219);
+    cursor: pointer;
 }
 
 .button-container div{
@@ -78,6 +95,7 @@ flex-direction:column;
 .button-container .divide:hover, .multiply:hover, .subtract:hover, .add:hover, .equals:hover{
     background-color: rgb(246, 160, 61);
     font-size: 2rem;
+    cursor: pointer;
 }
 
 .seven{
@@ -123,6 +141,7 @@ flex-direction:column;
 }
 .decimal:hover{
     background-color: rgb(193, 194, 195);
+    cursor: pointer;
 }
 .zero{
     grid-area:zro;
