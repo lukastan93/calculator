@@ -67,28 +67,108 @@ function clearDisplay(){
 
 const divideButton = document.querySelector('.divide').onclick = pressDivide;
 function pressDivide(){
-    operand1 = parseInt(display.textContent, 10);
+    let displayValue = parseInt(display.textContent, 10);
+    switch (operator){
+        case "divide":
+            if(operand1 && display.textContent){
+                operand1 = divide(operand1 , displayValue);
+            }
+            else{operand1 = parseInt(display.textContent, 10);}
+            break;
+        case "multiply":
+            operand1 = multiply(operand1, displayValue);
+            break;
+        case "subtract":
+            operand1 = subtract(operand1, displayValue);
+            break;
+        case "add":
+            operand1 = add(operand1, displayValue);
+            break;
+        default:
+            operand1 = displayValue;
+            break;
+    }
     operator = 'divide';
     clearDisplay();
 }
 
-const multiplyButton = document.querySelector('.multiply').onclick = pressMultiply;
+const multipllylButton = document.querySelector('.multiply').onclick = pressMultiply;
 function pressMultiply(){
-    operand1 = parseInt(display.textContent, 10);
+    let displayValue = parseInt(display.textContent, 10);
+    switch (operator){
+        case "multiply":
+            if(operand1 && display.textContent){
+                operand1 = multiply(operand1 , displayValue);
+            }
+            else{operand1 = parseInt(display.textContent, 10);}
+            break;
+        case "divide":
+            operand1 = divide(operand1, displayValue);
+            break;
+        case "subtract":
+            operand1 = subtract(operand1, displayValue);
+            break;
+        case "add":
+            operand1 = add(operand1, displayValue);
+            break;
+        default:
+            operand1 = displayValue;
+            break;
+    }
     operator = 'multiply';
     clearDisplay();
 }
 
 const subtractButton = document.querySelector('.subtract').onclick = pressSubtract;
 function pressSubtract(){
-    operand1 = parseInt(display.textContent, 10);
+    let displayValue = parseInt(display.textContent, 10);
+    switch (operator){
+        case "subtract":
+            if(operand1 && display.textContent){
+                operand1 = subtract(operand1 , displayValue);
+            }
+            else{operand1 = parseInt(display.textContent, 10);}
+            break;
+        case "multiply":
+            operand1 = multiply(operand1, displayValue);
+            break;
+        case "divide":
+            operand1 = divide(operand1, displayValue);
+            break;
+        case "add":
+            operand1 = add(operand1, displayValue);
+            break;
+        default:
+            operand1 = displayValue;
+            break;
+    }
     operator = 'subtract';
     clearDisplay();
 }
 
 const addButton = document.querySelector('.add').onclick = pressAdd;
 function pressAdd(){
-    operand1 = parseInt(display.textContent, 10);
+    let displayValue = parseInt(display.textContent, 10);
+    switch (operator){
+        case "add":
+            if(operand1 && display.textContent){
+                operand1 = add(operand1 , displayValue);
+            }
+            else{operand1 = parseInt(display.textContent, 10);}
+            break;
+        case "multiply":
+            operand1 = multiply(operand1, displayValue);
+            break;
+        case "subtract":
+            operand1 = subtract(operand1, displayValue);
+            break;
+        case "divide":
+            operand1 = divide(operand1, displayValue);
+            break;
+        default:
+            operand1 = displayValue;
+            break;
+    }
     operator = 'add';
     clearDisplay();
 }
@@ -99,21 +179,27 @@ function pressEquals(){
     switch (operator){
         case 'divide':
             display.textContent = divide(operand1 , operand2);
-            operator = 'equals'
+            operand1 = null;
+            operand2 = null;
+            operator = null;
             break;
         case 'multiply':
             display.textContent = multiply(operand1 , operand2);
-            operator = 'equals'
+            operand1 = null;
+            operand2 = null;
+            operator = null;
             break;
         case 'subtract':
             display.textContent = subtract(operand1 , operand2);
-            operator = 'equals'
+            operand1 = null;
+            operand2 = null;
+            operator = null;
             break;
         case 'add':
             display.textContent = add(operand1 , operand2);
-            operator = 'equals'
-            break;
-        case 'equals':
+            operand1 = null;
+            operand2 = null;
+            operator = null;
             break;
         default: break;
     }
